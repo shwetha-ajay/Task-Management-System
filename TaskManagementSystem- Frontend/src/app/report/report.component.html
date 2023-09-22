@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <section class="header">
+        <div class="logo">
+            <i class="ri-menu-line icon icon-0 menu"></i>
+            <h2>To<span>Do</span></h2>
+        </div>
+        <div class="search--notification--profile">
+            <div class="notification--profile">
+                
+            </div>
+        </div>
+    </section>
+    <section class="main">
+        <div class="sidebar">
+            <ul class="sidebar--items">
+                <li>
+                    <a href="#" id="active--link">
+                        <span class="icon icon-1"><i class="ri-layout-grid-line"></i></span>
+                        <span class="sidebar--item">Dashboard</span>
+                    </a>
+                </li>             
+                <li>
+                    <a href="dashboard">
+                        <span class="icon icon-3"><i class="ri-user-2-line"></i></span>
+                        <span class="sidebar--item" style="white-space: nowrap;">Users</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Admin">
+                        <span class="icon icon-4"><i class="ri-user-line"></i></span>
+                        <span class="sidebar--item">Tasks</span>
+                    </a>
+                </li>
+                <!-- <li>
+                    <a href="addTask">
+                        <span class="icon icon-3"><i class="ri-user-2-line"></i></span>
+                        <span class="sidebar--item" style="white-space: nowrap;">add</span>
+                    </a>
+                </li>
+              -->
+            </ul>
+            <ul class="sidebar--bottom-items">
+                <li>
+                    
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon icon-8"><i class="ri-logout-box-r-line"></i></span>
+                        <span class="sidebar--item">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main--content">
+                
+                <div class="recent--patients">
+                <div class="title">
+                    <h3 class="section--title">Task Report</h3>
+                </div>
+
+
+              
+
+
+<button class="generate-button" (click)="generateStatusReport()">Status Report</button>
+<div *ngIf="taskStatusCounts">
+  <table>
+    <thead>
+      <tr>
+        <th>Status</th>
+        <th>Count of Tasks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let status of taskStatusCounts">
+        <td>Tasks {{ status.label }}</td>
+        <td>{{ status.count }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  
+<button class="generate-button" (click)="generatePriorityReport()">Priority Report</button>
+<div *ngIf="taskPriorityCounts">
+  <table>
+    <thead>
+      <tr>
+        <th>Priority</th>
+        <th>Count of Tasks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let priority of taskPriorityCounts">
+        <td>Priority {{ priority.label }}</td>
+        <td>{{ priority.count }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  

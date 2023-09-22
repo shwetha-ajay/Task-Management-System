@@ -1,0 +1,35 @@
+
+    <div class="login-page">
+        <h4></h4>
+        <div class="form">
+         
+          <form class="login-form" [formGroup]="loginForm" (ngSubmit)="doLogin()">
+            <input type="text"  name="email" formControlName="email" placeholder="User Email">
+            
+          <div class="valid" *ngIf="loginForm.controls.email.invalid && loginForm.controls.email.touched">
+
+            Email is invalid.
+            </div>
+                        
+            <input type="password"name="password" formControlName="password" placeholder="Password">
+            <div class="valid" *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched">
+
+              Password is invalid.
+  
+            </div>
+            
+            <select class="selectRole" name="userRole" formControlName="role">
+            <option value="">Role</option>  
+            <option value="User" >User</option>
+            <option value="superadmin">superadmin</option>
+            <option value="Admin">Admin</option>
+          </select>
+          <div class="valid" *ngIf="loginForm.controls.role.invalid && loginForm.controls.role.touched">
+
+            Role is invalid.
+
+          </div>
+            <button type="submit" >login</button>          
+          </form>
+        </div>
+    </div>
